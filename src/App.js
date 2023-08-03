@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -16,26 +17,22 @@ function App() {
       <input id="darkMode" type="checkbox" className="dark-mode-check" />
 
       <div className="wrapper">
+        <Routes>
+          <Route path="/" element={<Hero />} /> {/* 👈 Renders at /app/ */}
+          <Route path="/skills" element={<Skills />} />{" "}
+          {/* 👈 Renders at /app/ */}
+          <Route path="/hero" element={<Hero />} /> {/* 👈 Renders at /app/ */}
+          <Route path="/about" element={<About />} />{" "}
+          {/* 👈 Renders at /app/ */}
+          <Route path="/contact" element={<Contact />} />{" "}
+          {/* 👈 Renders at /app/ */}
+          <Route path="/projects" element={<Projects />} />{" "}
+          {/* 👈 Renders at /app/ */}
+        </Routes>
         {/* <!-- dark mode toggler --> */}
         <label htmlFor="darkMode">
           <i className="fa-solid fa-circle-half-stroke dark-mode-toggle"></i>
         </label>
-
-        {/* <!-- Header --> */}
-        <Header />
-        {/* <!-- Hero --> */}
-        <Hero />
-        {/* <!-- Banner --> */}
-        {/* <!-- Skills --> */}
-        <Skills />
-        {/* <!-- Projects --> */}
-        <Projects />
-        {/* <!-- About Me --> */}
-        <About />
-        {/* <!-- Contact --> */}
-        <Contact />
-        {/* <!-- Footer --> */}
-        <Footer />
       </div>
     </div>
   );
